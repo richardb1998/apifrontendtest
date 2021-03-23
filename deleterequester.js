@@ -8,5 +8,6 @@ class deleterequester {
             body: {'username':username,
                    'password':password}
         });
+        return response
     }
 }

@@ -24,9 +24,16 @@
     <div>
         <input id="delbutton" type="button" value="Delete book" onclick="function processDelete() {
                 const delrequest = new deleterequester();
-                delrequest.delete('http://localhost:8080/user', document.getElementById('username').value, document.getElementById('password').value)
+                delrequest.delete('http://localhost:8080/user', document.getElementById('username').value, document.getElementById('password').value).then(response => {
+                   response.text().then(txt => {
+                       document.getElementById('returnVal').innerHTML = txt;
+                   })
+                });
             }
             processDelete();">
+    </div>
+    <div>
+        <p id="returnVal"></p>
     </div>
 </form>
 </p>
