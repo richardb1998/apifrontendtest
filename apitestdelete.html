@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Delete API Test</title>
 </head>
 <body>
+<p>
+    <a href="apitestget.html">Get API Test</a>
+    <a href="apitestpost.html">Post API Test</a>
+</p>
 
+<p>
+    <script src="deleterequester.js"></script>
+<form>
+    <div>
+        <label for="username">Please enter username</label>
+        <input name="username" id="username" value="">
+    </div>
+    <div>
+        <label for="password">What is your password</label>
+        <input type="password" name="password" id="password" value="">
+    </div>
+    <div>
+        <input id="delbutton" type="button" value="Delete book" onclick="function processDelete() {
+                const delrequest = new deleterequester();
+                delrequest.delete('http://localhost:8080/user', document.getElementById('username').value, document.getElementById('password').value)
+            }
+            processDelete();">
+    </div>
+</form>
+</p>
 </body>
 </html>
